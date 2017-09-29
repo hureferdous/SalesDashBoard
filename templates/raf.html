@@ -1,0 +1,92 @@
+<div class="container">
+          <div class = "container">
+          <div class="row">
+
+              <div class="col-sm-6">
+                         <div class="form-group">
+                         <label>Select Brand</label>
+                              <select class="select_product" onchange="run()" id="select_brand">
+     <option value="1">Brand1</option>
+     <option value="2">Brand2</option>
+     <option value="3">Brand3</option>
+     <option value="4">Brand4</option>
+</select>
+                    </div>
+                   </div>
+               </div>
+              <div class="col-sm-6">
+                         <div class="form-group">
+                        <label>Total Sales in Year</label>
+                           <input type="text" placeholder="Total sales">
+
+                   </div>
+              </div>
+               </div>
+          </div>
+
+          </div>
+
+          <div class="container">
+          <div class="row">
+              <div class="col-sm-12">
+                    <!--price chart -->
+                  <h2>Sales Revenue</h2>
+                   <div id="price-chart">
+                   </div>
+               </div>
+          </div>
+          </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h2>Product Category</h2>
+                      <div id="category-chart"></div>
+                  </div>
+
+              </div>
+          </div>
+           <div class="container">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h2>Yearly Salss</h2>
+                      <div id="date-chart"></div>
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+
+
+
+// select brand
+       var selectFieldBrand = dc.selectMenu('#select_brand');
+
+     // Select brand filter by search
+
+      dc.dataCount('.dc-data-count')
+        .dimension(ndx)
+        .group(all)
+        .html({
+        some: '<strong>%filter-count</strong> selected out of <strong>%total-count</strong> records',
+        all: 'All records selected.'});
+
+    selectFieldBrand
+        .dimension(brandTypeDim)
+        .group(brandTypeGroup);
+
+
+<script type='text/javascript'>
+        var selectedValue = 1;
+  function run() {
+       selectedValue = document.getElementById("select_brand").value;
+       alert(selectedValue);
+    }</script>
+
+<script type='text/javascript'>
+        var selectedValue = 1;
+               function run() {
+                   selectedValue = document.getElementById("select-brand").value;
+                   alert(selectedValue);
+               }
+     </script>

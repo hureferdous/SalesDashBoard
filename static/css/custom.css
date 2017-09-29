@@ -1,1 +1,7 @@
-h2{color: #ac2925;}
+#main_nav {background-color:lightslategrey;
+           color:black;
+           font-size: 16px;}
+#application{
+     background-color: #222222;
+}
+#price_show{margin-top: 50px;}

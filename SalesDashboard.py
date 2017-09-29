@@ -11,7 +11,7 @@ MONGODB_HOST = 'localhost'
 MONGODB_PORT = 27017
 DBS_NAME = 'shopdb'
 COLLECTION_NAME = 'product'
-FIELDS = {'category': True, 'size': True, 'price': True, 'brand': True, '_id': False, 'sales_date': True, 'name':True }
+FIELDS = {'category': True, 'size': True, 'price': True, 'brand': True, '_id': False, 'sales_date': True, 'name': True }
 
 @app.route("/")
 def index():

@@ -4,57 +4,92 @@
     <title>Sales Deshboard</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
-     <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap.css') }}">
-     <link rel="stylesheet" href="{{ url_for ('static', filename='bower_components/keen-dashboards/dist/keen-dashboards.css')}}">
-     <link rel="stylesheet" href="{{ url_for ('static', filename='bower_components/dcjs/dc.css')}}">
+      <link rel="stylesheet" href="/static/css/custom.css">
+     <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
+     <link rel="stylesheet" href="/static/bower_components/keen-dashboards/dist/keen-dashboards.css">
+     <link rel="stylesheet" href="/static/bower_components/dcjs/dc.css">
+     <script type='text/javascript'>
+        var selectedValue = 1;
+  function run() {
+       selectedValue = document.getElementById("select_brand").value;
+        queue()
+     .defer(d3.json, "/products")
+     .await(makeGraphs);
+    }</script>
 
-      <script type='text/javascript' src="{{ url_for ('static', filename='bower_components/d3/d3.js')}}"></script>
-      <script src="http://d3js.org/queue.v1.min.js"></script>
-      <script type='text/javascript' src="{{ url_for ('static', filename='bower_components/crossfilter/crossfilter.js')}}"></script>
-       <script type='text/javascript' src="{{ url_for ('static', filename='bower_components/dcjs/dc.js')}}"></script>
-      <script type='text/javascript' src="{{ url_for ('static', filename='js/graph.js')}}"></script>
-      <script type='text/javascript' src="{{ url_for ('static', filename='bower_components/keen-js/dist/keen.js')}}"></script>
 
 </head>
 
-<body>
+  <body id="application">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid" id="main_nav" >
+            <div class="container" >
+            <div class="navbar-header">
+                <a class="navbar-brand" href="./"><b>Sales </b> Dashboard</a>
+            </div>
+                <ul class="nav navbar-nav navbar-right">
+                     <div class="form-group">
+                         <lavel><b>Select Brand</b></lavel>
+                              <select class="select_product" onchange="run( )" id="select_brand">
+                                      <option value="1">Next</option>
+                                      <option value="2">House of Fraser</option>
+                                      <option value="3">Boss</option>
+                                      <option value="4">Yumi</option>
+                               </select>
+                      </div>
+                </ul>
+
+            </div>
+        </div>
+    </div>
       <div class="container">
-          <div class="row">
-              <div class="col-sm-12">
-                    <!--price chart -->
-                  <h2>Sales Revenue</h2>
-                   <div id="price-chart">
-                   </div>
-               </div>
-          </div>
-          <div class="container">
-              <div class="row">
-                  <div class="col-sm-12">
-                      <h2>Product Category</h2>
-                      <div id="category-chart"></div>
-                  </div>
+        <div class="row">
+             <div class="col-sm-12" id="price_show" >
+                <div class="chart-wrapper">
+                     <div class="chart-title">
+                        Sales Revenue
+                      </div>
+                       <div class="chart-stage">
+                           <div id="price-chart"></div>
+                       </div>
+                </div>
+             </div>
+                 <div  class="col-sm-6">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Pie Chart
+                        </div>
+                        <div class="chart-stage">
+                            <div id="category-chart"></div>
+                        </div>
+                    </div>
+                </div>
 
-              </div>
-          </div>
-           <div class="container">
-              <div class="row">
-                  <div class="col-sm-12">
-                      <h2>Yearly Salss</h2>
-                      <div id="date-chart"></div>
-                  </div>
+                <div  class="col-sm-6">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Bar Chart
+                        </div>
+                        <div class="chart-stage">
+                            <div id="brand-chart" ></div>
+                        </div>
+                    </div>
+                </div>
 
-              </div>
-          </div>
 
-      </div>
+        </div>
+    </div>
 
-      <script type='text/javascript' src="{{ url_for ('static', filename='bower_components/d3/d3.js')}}"></script>
-      <script src="http://d3js.org/queue.v1.min.js"></script>
-      <script type='text/javascript' src="{{ url_for ('static', filename='bower_components/crossfilter/crossfilter.js')}}"></script>
-       <script type='text/javascript' src="{{ url_for ('static', filename='bower_components/dcjs/dc.js')}}"></script>
-       <script type='text/javascript' src="{{ url_for ('static', filename='bower_components/keen-js/dist/keen.js')}}"></script>
-      <script type='text/javascript' src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+
+
+      <script type='text/javascript' src="/static/bower_components/d3/d3.js"></script>
+        <script type='text/javascript' src="http://d3js.org/queue.v1.min.js" ></script>
+    <script type='text/javascript' src="/static/bower_components/crossfilter/crossfilter.js"></script>
+
+      <script type='text/javascript' src="/static/bower_components/dcjs/dc.js"></script>
+         <script type='text/javascript' src="/static/bower_components/keen-js/dist/keen.js"></script>
+      <script type='text/javascript' src="/static/js/graph.js"></script>
 
  </body>
 </html>
