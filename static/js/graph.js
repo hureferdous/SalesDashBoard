@@ -3,6 +3,8 @@
      .await(makeGraphs);
 
  function makeGraphs(error, productsJson) {
+
+
      var salesDashboardProduct = productsJson;
 
      // Crossfilter instance
@@ -25,6 +27,15 @@
      var priceTypeGroup = priceTypeDim.group();
      var categoryTypeGroup = categoryTypeDim.group();
      var brandTypeGroup = brandTypeDim.group();
+
+
+     // SELECT MENUS
+      selectField = dc.selectMenu("#select_brand")
+        .dimension(brandTypeDim)
+        .group(brandTypeGroup);
+      selectField = dc.selectMenu("#select_category")
+        .dimension(categoryTypeDim)
+        .group(categoryTypeGroup);
 
      //bar chart
      priceTypeChart

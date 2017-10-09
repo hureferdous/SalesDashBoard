@@ -74,19 +74,27 @@
     selectFieldBrand
         .dimension(brandTypeDim)
         .group(brandTypeGroup);
+//
 
-
-<script type='text/javascript'>
-        var selectedValue = 1;
+ var selectedValue = "brand";
   function run() {
        selectedValue = document.getElementById("select_brand").value;
-       alert(selectedValue);
+        queue()
+     .defer(d3.json, "/products")
+     .await(makeGraphs);
     }</script>
 
-<script type='text/javascript'>
-        var selectedValue = 1;
-               function run() {
-                   selectedValue = document.getElementById("select-brand").value;
-                   alert(selectedValue);
-               }
-     </script>
+
+//
+<lavel for="select_brand" ><b>Select Brand</b></lavel>
+                              <select class="select_product " onchange="run( )" id="select_brand">
+                                      <option value="Hobbs">Hobbs</option>
+                                      <option value="House of Fraser">House of Fraser</option>
+                                      <option value="Boss">Boss</option>
+                                      <option value="Yumi">Yumi</option>
+                               </select>
+//
+
+
+ productsJson = productsJson.filter(function(item){return item["brand"] === selectedValue});
+

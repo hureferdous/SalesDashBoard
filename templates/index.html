@@ -8,43 +8,55 @@
      <link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.css">
      <link rel="stylesheet" href="/static/bower_components/keen-dashboards/dist/keen-dashboards.css">
      <link rel="stylesheet" href="/static/bower_components/dcjs/dc.css">
-     <script type='text/javascript'>
-        var selectedValue = 1;
-  function run() {
-       selectedValue = document.getElementById("select_brand").value;
-        queue()
-     .defer(d3.json, "/products")
-     .await(makeGraphs);
-    }</script>
-
 
 </head>
 
   <body id="application">
-
+     <!-- Start Nav -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid" id="main_nav" >
             <div class="container" >
-            <div class="navbar-header">
-                <a class="navbar-brand" href="./"><b>Sales </b> Dashboard</a>
+            <div class="navbar-header" >
+                <a class="navbar-brand" href="./" id="nav_design"><b>Sales </b> Dashboard</a>
             </div>
                 <ul class="nav navbar-nav navbar-right">
-                     <div class="form-group">
-                         <lavel><b>Select Brand</b></lavel>
-                              <select class="select_product" onchange="run( )" id="select_brand">
-                                      <option value="1">Next</option>
-                                      <option value="2">House of Fraser</option>
-                                      <option value="3">Boss</option>
-                                      <option value="4">Yumi</option>
-                               </select>
-                      </div>
+                    <!-- Start Select Brand  -->
+                    <li>
+                        <div class="chart-wrapper" id="brand">
+                               <div class="pos_select">
+                                   <div class="chart-title">
+                                      Select Brand
+                                   </div>
+                                    <div class="chart-stage">
+                                         <div id="select_brand"></div>
+                                    </div>
+                               </div>
+                           </div>
+                    </li>
+                    <!-- End Select Brand  -->
+                    <!-- Start Select Category  -->
+                    <li>
+                        <div class="chart-wrapper" id="category">
+                               <div class="pos_select">
+                                   <div class="chart-title">
+                                      Select Category
+                                   </div>
+                                    <div class="chart-stage">
+                                         <div id="select_category"></div>
+                                    </div>
+                               </div>
+                           </div>
+                    </li>
+                    <!-- End Select Category  -->
                 </ul>
 
             </div>
         </div>
-    </div>
-      <div class="container">
+    </div>  <!-- End Nav   -->
+     <!-- Start Chart Creation  -->
+     <div id="main_chart" class="container">
         <div class="row">
+              <!-- Start Price Chart  -->
              <div class="col-sm-12" id="price_show" >
                 <div class="chart-wrapper">
                      <div class="chart-title">
@@ -54,8 +66,9 @@
                            <div id="price-chart"></div>
                        </div>
                 </div>
-             </div>
-                 <div  class="col-sm-6">
+             </div>  <!-- End Price Chart  -->
+
+            <div  class="col-sm-6"> <!-- Start Category Chart  -->
                     <div class="chart-wrapper">
                         <div class="chart-title">
                             Pie Chart
@@ -64,9 +77,9 @@
                             <div id="category-chart"></div>
                         </div>
                     </div>
-                </div>
+            </div> <!-- End Category Chart  -->
 
-                <div  class="col-sm-6">
+            <div  class="col-sm-6"> <!-- Start Brand Chart  -->
                     <div class="chart-wrapper">
                         <div class="chart-title">
                             Bar Chart
@@ -75,15 +88,11 @@
                             <div id="brand-chart" ></div>
                         </div>
                     </div>
-                </div>
-
-
+            </div> <!-- End Brand Chart  -->
         </div>
-    </div>
+    </div>  <!-- End Chart Creation  -->
 
-
-
-      <script type='text/javascript' src="/static/bower_components/d3/d3.js"></script>
+    <script type='text/javascript' src="/static/bower_components/d3/d3.js"></script>
         <script type='text/javascript' src="http://d3js.org/queue.v1.min.js" ></script>
     <script type='text/javascript' src="/static/bower_components/crossfilter/crossfilter.js"></script>
 

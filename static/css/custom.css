@@ -1,7 +1,8 @@
-#main_nav {background-color:lightslategrey;
-           color:black;
-           font-size: 16px;}
-#application{
-     background-color: #222222;
-}
-#price_show{margin-top: 50px;}
+#main_nav {background-color:slategray;  color:white;  font-size: 16px;}
+#nav_design{color:white;}
+#application{  background-color: #444444; }
+#select_brand{border-radius: 10px;color:#444444; font-size:12px; background-color:slategray;}
+#brand{background-color:white; color:#444444;margin-top:10px;font-weight: bold;font-size:16px;}
+#select_category{border-radius:10px;color:#444444; font-size:12px; background-color:slategray;}
+#main_chart{margin-top:50px;}
+#category{backgrsound-color:white; color:#444444;margin:10px 0px 0px 20px;font-weight: bold;
