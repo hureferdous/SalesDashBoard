@@ -1,10 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+  {% extends "index.html" %}
+   {% block content %}
+<!-- Start Chart Creation  -->
+       <div id="main_chart" class="container">
+        <div class="row">
+                 <div  class="col-sm-6"> <!-- Start Brand Chart  -->
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            <h4>Product Char By Brand </h4>
+                        </div>
+                        <div class="chart-stage">
+                            <div id="brand-chart" ></div>
+                        </div>
+                    </div>
+            </div> <!-- End Brand Chart  -->
+                <!-- Start size Chart  -->
+             <div class="col-sm-6" id="size_show" >
+                <div class="chart-wrapper">
+                     <div class="chart-title">
+                         <h4>Product Chart By Size</h4>
+                      </div>
+                       <div class="chart-stage">
+                           <div id="size-chart"></div>
+                       </div>
+                </div>
+             </div>  <!-- End size Chart  -->
+              <!-- Start Price Chart  -->
+             <div class="col-sm-12" id="price_show" >
+                <div class="chart-wrapper">
+                     <div class="chart-title">
+                         <h4> Product Price Chart </h4>
+                      </div>
+                       <div class="chart-stage">
+                           <div id="price-chart"></div>
+                       </div>
+                </div>
+             </div>  <!-- End Price Chart  -->
+            <div  class="col-sm-6"> <!-- Start Category Chart  -->
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            <h4>Product Chart By Category </h4>
+                        </div>
+                        <div class="chart-stage" id="pie_chart">
+                            <div id="category-chart"></div>
+                        </div>
+                    </div>
+            </div> <!-- End Category Chart  -->
+
+             <!-- Start Time Chart  -->
+             <div class="col-sm-6" id="time_show" >
+                <div class="chart-wrapper">
+                     <div class="chart-title">
+                         <h4>Sales Date Chart</h4>
+                      </div>
+                       <div class="chart-stage">
+                           <div id="time-chart"></div>
+                       </div>
+                </div>
+             </div>  <!-- End Time Chart  -->
+
+        </div>
+    </div>  <!-- End Chart Creation  -->
+
+  {% endblock %}

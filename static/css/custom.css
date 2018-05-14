@@ -1,8 +1,11 @@
-#main_nav {background-color:slategray;  color:white;  font-size: 16px;}
+#main_nav {background-color:slategray;  color:white; padding:10px 0px; font-size: 16px;}
 #nav_design{color:white;}
 #application{  background-color: #444444; }
 #select_brand{border-radius: 10px;color:#444444; font-size:12px; background-color:slategray;}
 #brand{background-color:white; color:#444444;margin-top:10px;font-weight: bold;font-size:16px;}
 #select_category{border-radius:10px;color:#444444; font-size:12px; background-color:slategray;}
-#main_chart{margin-top:50px;}
-#category{backgrsound-color:white; color:#444444;margin:10px 0px 0px 20px;font-weight: bold;
+#main_chart{margin-top:10px;}
+#category{backgrsound-color:white; color:#444444;margin:10px 0px 0px 20px;font-weight: bold;}
+#price_show{margin:0px 0px ;}
+#pie_chart{margin:20px 0px 0px 20px;}
+#nav_para{padding: 20px 0px 0px 20px ;}

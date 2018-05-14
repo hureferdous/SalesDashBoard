@@ -15,7 +15,7 @@ FIELDS = {'category': True, 'size': True, 'price': True, 'brand': True, '_id': F
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("main.html")
 
 @app.route("/products")
 def salesDeshbord_Products():
