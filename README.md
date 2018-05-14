@@ -130,7 +130,7 @@ Install the dependencies:
 pip install -r requirements.txt
 ```
 
-In this project, I've used data that originally I created in __MongoDB__ and then save thoes data in a CSV file called __salesdashboard.csv__. I upload __salesdashboard.csv__ in to GitHub. The file can be downloaded from [here.] (http://data.donorschoose.org/open-data/overview/)
+In this project, I've used data that originally I created in __MongoDB__ and then save thoes data in a CSV file called __salesdashboard.csv__. I upload __salesdashboard.csv__ in to GitHub. The file can be downloaded from here.
 
 The file is uploaded to an instance of MongoDb running locally. In doing so, the content is be converted to JSON format.
 
