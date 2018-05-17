@@ -22,7 +22,7 @@ Here I use __Python Flask__ for building a server that interact with __MongoDB__
 In SalesDashBoard folder I create SalesDashboard.py where all the server code is included for this project.
 
 
-![pic4](https://user-images.githubusercontent.com/24476948/39951021-e402dab8-557d-11e8-8e20-a5e3b0e66d14.PNG)
+![pic21](https://user-images.githubusercontent.com/24476948/40204800-b239278c-5a21-11e8-9ea3-a7280df3fd2d.PNG)
 
 
 ## Building Front End Code
