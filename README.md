@@ -6,7 +6,7 @@ The goal of this project is to introduce the building blocks for creating a mean
 * In this project all charts are interrelated to each other. Any filter applied in any chart will affect the remainder charts. So unless you wanted to apply several filters together, it’s better to reset filter after each query.
 
 ## Data
-The Data are comes from a CSV file- are imported to a non relational database __MongoDB__ and converted into __JSON__ format. For this project I create data in MongoDB and save thoes data in salesdashboard.csv file.
+The Data are comes from a CSV file- are imported to a non relational database __MongoDB__ and converted into __JSON__ format. For this project I create data in MongoDB and save thoes data in salesdashboard.csv file. I also save this CSV file in [Here](https://github.com/hureferdous/data.git). Anyone can download this salesdashboard.csv file and then import thoes data in MongoDB to run this project. 
 
 ## Structure
 The project is mainly consist of three parts which are data, vendors libraries and CSS files:
@@ -109,6 +109,7 @@ Python is a general-purpose interpreted, interactive, object-oriented, and high-
 * ### [Javascript](https://www.javascript.com/)
 * ### [HTML](https://www.w3schools.com/html/)
 * ### [CSS](https://www.w3schools.com/css/default.asp)
+
 ## Instructions
 Open your terminal and use the git clone command:
 
@@ -130,13 +131,20 @@ Install the dependencies:
 pip install -r requirements.txt
 ```
 
-In this project, I've used data that originally I created in __MongoDB__ and then save thoes data in a CSV file called __salesdashboard.csv__. I upload __salesdashboard.csv__ in to GitHub. The file can be downloaded from here.
+In this project, I've used data that originally I created in __MongoDB__ and then save thoes data in a CSV file called __salesdashboard.csv__. I upload __salesdashboard.csv__ in to GitHub. The file can be downloaded from [Here](https://github.com/hureferdous/data.git).
 
 The file is uploaded to an instance of MongoDb running locally. In doing so, the content is be converted to JSON format.
 
-To do that, open your terminal and run mongoDB by running the command: ``` mongod ```
+To do that, open your terminal and run mongoDB by running the command:
+
+``` mongod ```
 
 Leave it running as it is and open another terminal window. Then copy the CSV file to the same location as the directory opened in the second terminal window. Import all data in __MongoDB__ to run this project properly.
+
+```
+mongoimport --db productdb --collection product --type csv --fields name,category,brand,price,sales_date,style,size --file /data/dump/product/salesdashboard.csv
+```
+
 
 It will take a few seconds to run the file.
 
